@@ -1,0 +1,19 @@
+server:
+  port: 8072
+
+spring:
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://postgres-container:5432/final_project_db"        # App & DB inside Docker
+    # url: "jdbc:postgresql://localhost:5432/final_project_db"               # App & DB oustide Docker
+    # url: "jdbc:postgresql://host.docker.internal:5432/final_project_db"    # App in Docker to connect DB outside Docker
+    username: "postgres"
+    password: "admin1234"
+  jpa:
+    show-sql: false
+    hibernate.ddl-auto: update
+  data:
+    redis:
+      host: redis-container
+      # host: localhost
+      port: 6379

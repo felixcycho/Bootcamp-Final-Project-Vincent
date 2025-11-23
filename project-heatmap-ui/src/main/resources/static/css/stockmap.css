@@ -1,0 +1,96 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(39, 41, 49);
+}
+
+#treemap-chart {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: darkred;
+}
+
+.stock rect {
+  cursor: pointer;
+}
+
+.stock text,
+.industry text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 2px black;
+}
+
+.stock text {
+  text-anchor: middle;
+  /* Center stock text horizontally */
+  fill: white;
+}
+
+.industry text {
+  font-weight: bold;
+  font-size: 14px;
+  fill: #f2ce00;
+  /* Gold for industry titles */
+  text-shadow: 1px 1px 2px black;
+}
+
+#tooltip {
+  position: absolute;
+  background: rgb(0, 3, 78);
+  border: 1px solid #f2ce00;
+  border-radius: 4px;
+  padding: 8px;
+  pointer-events: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  display: none;
+  z-index: 1000;
+  max-width: 300px;
+}
+
+#tooltip .tooltip-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+#tooltip img {
+  max-width: 15px;
+  max-height: 15px;
+  vertical-align: middle;
+  margin-right: 4px;
+  /* Adjusted spacing */
+}
+
+#tooltip .company-name {
+  font-weight: bold;
+}
+
+#tooltip .data-row {
+  margin: 2px 0;
+}
